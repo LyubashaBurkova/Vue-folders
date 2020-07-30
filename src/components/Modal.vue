@@ -5,23 +5,17 @@
             <div class="modal-container">
 
               <div class="modal-header">
-                <slot name="header">
-                  default header
+                <slot name="header">                 
                 </slot>
               </div>
 
-              <div class="modal-body">
-                <slot name="body">
-                  default body
+              <div class="modal-body">               
+                <slot name="body">                 
                 </slot>
               </div>
 
               <div class="modal-footer">
-                <slot name="footer">
-                  default footer
-                  <button class="modal-default-button" @click="$emit('close')">
-                    OK
-                  </button>
+                <slot name="footer">                
                 </slot>
               </div>
             </div>
@@ -74,6 +68,7 @@ export default {
     display: block;
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
+    padding: 15px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     width: 360px;
     height: 334px;
