@@ -22,11 +22,6 @@ import {mapState} from 'vuex'
 
 export default {
     name: 'Folder',
-    // data(){
-    //     return{
-    //       //  selectedId: null
-    //     }
-    // },
     props:{
         'folder':{
             type: Object
@@ -39,7 +34,6 @@ export default {
     },
     methods:{
         selectFolder(folderId){
-            console.log('selected')
             this.$store.commit('updateSelectFolders', folderId)
         }
     }

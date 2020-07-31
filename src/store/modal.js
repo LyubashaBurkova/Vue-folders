@@ -27,7 +27,6 @@ export default {
     },
     getters: {
         getModalInfo(state){
-            console.log(state)
             return state.modal
         }
     }
