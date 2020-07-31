@@ -56,28 +56,19 @@ export default {
 .modal-container {
   width: 300px;
   margin: 0px auto;
-  /* padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33); */
-  /* transition: all 0.3s ease; */
-  /* font-family: Helvetica, Arial, sans-serif; */
-}
-
-.modal-container {
-    display: block;
-    border-radius: 4px;
-    background-color: rgb(255, 255, 255);
-    padding: 15px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    width: 360px;
-    height: 334px;
-    position: fixed;
-    z-index: 100;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
+  display: block;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  width: 360px;
+  height: 334px;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
 }
 
 
@@ -87,7 +78,7 @@ export default {
 }
 
 .modal-body {
-  margin: 20px 0;
+  padding: 20px;
 }
 
 .modal-default-button {
@@ -103,19 +94,23 @@ export default {
  * these styles.
  */
 
-.modal-enter {
+/* .modal-enter {
   opacity: 0;
 }
 
 .modal-leave-active {
   opacity: 0;
-}
+} */
 
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+/* .folder[data-columns=2]{
+
+} */
 
 
 

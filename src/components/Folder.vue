@@ -1,22 +1,19 @@
 <template>
-<div>
-{{folder}}
-</div>
-   <!-- <div class="level" :class="folder.level" disable-select :data-level="folder.level">  -->
-         <!-- data-hasChild='{{HasChild}}'> -->
-            <!-- <span class='folder-imgs'>
-                <img src='/img/svg/folder-close.svg' class='folder-close' />
-                <span class='plus'>+</span>
-                <img src='/img/svg/folder-open.svg' class='folder-open' />
-            </span> -->
-            <!-- <span class="folder-caption" :data-id="folder.id">{{folder.caption}}</span>
-    </div> -->
+   <li class="folder" :class="folder.level" disable-select :data-level="folder.level"> 
+            <span>{{folder.level}}</span>
+            <span class="folder-caption" :data-id="folder.id">{{folder.caption}}</span>
+            <folder 
+                :index="index" 
+                v-for="(subfolder, index) in folder.subfolder"
+                :folder="subfolder"     
+                :key="subfolder.id"                          
+            ></folder>
+    </li>
 </template>
 <script>
-// import fontawesome from '@fortawesome/fontawesome'
-//import fontawesome from '../assets/font-awesome.min.css'
 
 export default {
+    name: 'Folder',
     data(){
         return{
 
@@ -26,9 +23,14 @@ export default {
         'folder':{
             type: Object
         }
-    }
+    },
+    // components: {
+    //     'folder': Folder
+    // }
 }
 </script>
 <style scoped>
-
+.folder {
+    margin: 10px 0;
+}
 </style>

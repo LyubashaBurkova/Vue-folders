@@ -6,14 +6,14 @@
           <h2>{{modal.caption}}</h2>
       </template>
       <template v-slot:body>
-        <div class="folders-list">
-          <folder 
+        <ul class="folders-list">
+          <li is="folder"  
             v-for="folder in folders"
             :folder="folder"
             :key="folder.id"          
           >
-          </folder>
-        </div>          
+          </li>
+        </ul>          
       </template>
       <template v-slot:footer>
           <button 
