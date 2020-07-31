@@ -21,7 +21,7 @@
             class="btn btn-success" 
             @click="selectFolder()" 
           >
-            OK
+            ок
           </button>       
       </template>
     </modal>
@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import Modal from './Modal.vue'
-import Folder from './Folder.vue'
+import Modal from './Modal'
+import Folder from './Folder'
 
 export default {
   name: "HomePage",
@@ -54,8 +54,8 @@ export default {
     }
   },
   components: {
-      'modal': Modal,
-      'folder': Folder
+      Modal,
+      Folder
   }
 }
 </script>
@@ -63,14 +63,12 @@ export default {
 button.btn {
   display: inline-block;
   font-size: 1.2rem;
-  /* color: #fff;
-  background-color: #3eaf7c; */
-  padding: 0.8rem 1.6rem;
+  padding: 5px 10px;
   border-radius: 4px;
   -webkit-transition: background-color 0.1s ease;
   transition: background-color 0.1s ease;
   box-sizing: border-box;
-  /* border-bottom: 1px solid #389d70; */
+  cursor: pointer;
 }
 
 .btn-success {
@@ -107,5 +105,23 @@ button.btn {
     color: #212529;
     background-color: #dae0e5;
     border-color: #d3d9df;
+}
+
+.folders-list {
+  padding: 0;
+  text-align: left;
+}
+
+.folders-list li {
+  list-style-type:none;
+  margin: 10px 0 10px 20px ;
+}
+
+.folders-list li .folder-caption{
+  cursor: pointer;
+}
+
+.folders-list li .selected-folder {
+  font-weight: bold;
 }
 </style>

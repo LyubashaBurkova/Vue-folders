@@ -12,14 +12,15 @@ class Folder{
 export default {
     state:{
         folders: null,
-        selectFolder: null
+        selectFolderId: null
     },
     mutations:{
-        updateFolders(state, payload){        
+        updateFolders(state, payload){
             state.folders = payload.resultFolders
         },
-        updateSelectFolders(state, payload){        
-            state.selectFolder = payload
+        updateSelectFolders(state, payload){  
+            console.log('payload2',payload)
+            state.selectFolderId = payload
         }
     },
     actions:{
@@ -28,16 +29,16 @@ export default {
             try{
                 const fbVal = await fb.database().ref('folders').once('value')
                 const folders = fbVal.val()
- console.log('folders', folders)
+ //console.log('folders', folders)
                 Object.keys(folders).forEach(key => {
                     const folder = folders[key]
-                    console.log()
+                    //console.log()
                     resultFolders.push(
-                        new Folder(folder.caption, folder.level, folder.subfolder, key)
+                        new Folder(folder.caption, folder.level, folder.subfolder, folder.id)
                     )
                 })
 
-                console.log('resultFolders', resultFolders)
+               // console.log('resultFolders', resultFolders)
                 commit('updateFolders', {
                     resultFolders
                 })
@@ -47,33 +48,20 @@ export default {
                 console.log(err)
             }
         },
-        //async selectFolders ({commit}){
-            //const resultFolders = []
-            // try{
-            //     const fbVal = await fb.database().ref('folders').once('value')
-            //     const folders = fbVal.val()
-
-            //     Object.keys(folders).forEach(key => {
-            //         const folder = folders[key]
-            //         resultFolders.push(
-            //             new Folder(folder.caption, folder.level, key)
-            //         )
-            //     })
-
-            //     commit('updateFolders', {
-            //         resultFolders
-            //     })
-
-                
-            // }catch(err){
-            //     console.log(err)
-            // }
-        //}
+        // async selectFolders ({commit}, payload){
+        //     console.log('payload1', payload)
+        //     commit('updateSelectFolders', payload)
+           
+        // }
     },
     getters: {
         getFolders(state){
-            console.log(state)
+            console.log('state', state)
             return state.folders
-        }
+        },
+        // getSelectFolderId(state){
+        //     console.log('getSelectFolderId state', state)
+        //     return state.selectFolderId
+        // }
     }
 }
