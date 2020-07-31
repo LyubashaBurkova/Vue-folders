@@ -14,11 +14,10 @@ export default {
             try{
                 const fbVal = await fb.database().ref('modal').once('value')
                 const modalInfo = fbVal.val()
-
+                
                 commit('updateModalInformation', {
                     modalInfo
                 })
-
                 
             }catch(err){
                 console.log(err)

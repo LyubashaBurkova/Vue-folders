@@ -28,6 +28,7 @@ export default {
             try{
                 const fbVal = await fb.database().ref('folders').once('value')
                 const folders = fbVal.val()
+
                 Object.keys(folders).forEach(key => {
                     const folder = folders[key]
                     resultFolders.push(
@@ -37,9 +38,8 @@ export default {
 
                 commit('updateFolders', {
                     resultFolders
-                })
-
-                
+                })     
+                           
             }catch(err){
                 console.log(err)
             }

@@ -3,17 +3,14 @@
         <div class="modal-mask"  v-if="showModal">
           <div class="modal-wrapper">
             <div class="modal-container">
-
               <div class="modal-header">
                 <slot name="header">                 
                 </slot>
               </div>
-
               <div class="modal-body">               
                 <slot name="body">                 
                 </slot>
               </div>
-
               <div class="modal-footer">
                 <slot name="footer">                
                 </slot>
@@ -23,7 +20,6 @@
         </div>
     </div>
 </template>
-
 <script>
 export default {
     name: "Modal",
@@ -34,7 +30,6 @@ export default {
     }
 }
 </script>
-
 <style>
 .modal-mask {
   position: fixed;
@@ -63,7 +58,6 @@ export default {
   background-color: rgb(255, 255, 255);
   padding: 15px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  
   position: fixed;
   z-index: 100;
   left: 50%;
@@ -78,6 +72,6 @@ export default {
 }
 
 .modal-footer {
-     padding: 20px;
+     padding: 15px;
 }
 </style>

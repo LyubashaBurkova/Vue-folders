@@ -27,7 +27,6 @@
     </modal>
   </div>
 </template>
-
 <script>
 import Modal from './Modal'
 import Folder from './Folder'
@@ -62,14 +61,15 @@ export default {
 }
 </script>
 <style>
-.folders-list {
+.folders-list,
+.folders-list ul {
   padding: 0;
   text-align: left;
 }
 
 .folders-list li {
   list-style-type:none;
-  margin: 10px 0 10px 15px ;
+  margin: 10px 0 10px 20px ;
 }
 
 .folders-list li .folder-caption{
